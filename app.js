@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
@@ -20,8 +19,6 @@ let teams = [];
 let players = [];
 let matches = [];
 let fixtures = [];
-
-// Routes
 
 // Fixtures
 app.post('/fixtures', (req, res) => {
@@ -72,6 +69,4 @@ app.get('/', (req, res) => {
   res.send('Backend server is running!');
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is listening on port ${PORT}`);
-});
+module.exports = app;
